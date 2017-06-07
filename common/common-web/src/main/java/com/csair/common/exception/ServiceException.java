@@ -2,7 +2,7 @@
  * 文 件 名:  ServiceException.java
  * 版    权:  China Southern Technologies Co., Ltd. Copyright ,  All rights reserved
  * 描    述:  <描述>
- * 修 改 人:  Administrator
+ * 修 改 人:  jinxiuwei
  * 修改时间:  Jun 7, 2017
  * 跟踪单号:  <跟踪单号>
  * 修改单号:  <修改单号>
