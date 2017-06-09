@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.csair.common.dto.Shop;
-import com.csair.common.type.Status;
+import com.csair.login.dto.Shop;
+
 
 @Controller
 @RequestMapping("/kfc/brands")
@@ -27,7 +27,5 @@ public class JSONController {
         return "index";
     }
     
-    public static void main(String[] args) {
-		System.out.println(Status.valueOf("OK"));
-	}
+   
 }
