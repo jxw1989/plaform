@@ -10,9 +10,6 @@
  */
 package com.csair.common.exception;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 /**
  * <一句话功能简述> <功能详细描述>
  * 
@@ -23,7 +20,6 @@ import org.slf4j.LoggerFactory;
  */
 public class ServiceException extends RuntimeException
 {
-    private Logger logger = LoggerFactory.getLogger("");
     /**
      * 注释内容
      */
@@ -35,6 +31,5 @@ public class ServiceException extends RuntimeException
     public ServiceException(String message,Throwable e)
     {
         super(message,e);
-        logger.debug(e.getMessage());
     }
 }
