@@ -2,7 +2,7 @@
  * 文 件 名:  BarcodeFactory.java
  * 版    权:  China Southern Technologies Co., Ltd. Copyright ,  All rights reserved
  * 描    述:  <描述>
- * 修 改 人:  Administrator
+ * 修 改 人:  jinxiuwei
  * 修改时间:  Jun 7, 2017
  * 跟踪单号:  <跟踪单号>
  * 修改单号:  <修改单号>
@@ -23,11 +23,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.imageio.ImageIO;
-
+import com.csair.common.exception.ServiceException;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
+import com.google.zxing.client.j2se.MatrixToImageWriter;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 
@@ -52,10 +53,11 @@ public class BarcodeFactory
     // 二维码写码器
     private static MultiFormatWriter mutiWriter = new MultiFormatWriter();
     
-    /** <一句话功能简述>
-     * <功能详细描述>
+    /**
+     * <一句话功能简述> <功能详细描述>
+     * 
      * @param content 数据内容
-     * @param width  二维码宽度
+     * @param width 二维码宽度
      * @param height 二维码高度
      * @param srcImagePath 内嵌图片地址
      * @return 二位码图片
@@ -63,7 +65,8 @@ public class BarcodeFactory
      * @throws IOException
      * @see [类、类#方法、类#成员]
      */
-    private static BufferedImage genBarcode(String content, int width, int height, String srcImagePath)throws WriterException, IOException
+    private static BufferedImage genBarcode(String content, int width, int height, String srcImagePath)
+        throws WriterException, IOException
     {
         // 读取源图像
         BufferedImage scaleImage = scale(srcImagePath, IMAGE_WIDTH, IMAGE_HEIGHT, true);
@@ -122,12 +125,13 @@ public class BarcodeFactory
         return image;
     }
     
-    /** <一句话功能简述>
-     * <功能详细描述> 把传入的原始图像按高度和宽度进行缩放，生成符合要求的图标
+    /**
+     * <一句话功能简述> <功能详细描述> 把传入的原始图像按高度和宽度进行缩放，生成符合要求的图标
+     * 
      * @param srcImageFile 源文件地址
      * @param height 目标高度
-     * @param width  目标宽度
-     * @param hasFiller  比例不对时是否需要补白：true为补白; false为不补白;
+     * @param width 目标宽度
+     * @param hasFiller 比例不对时是否需要补白：true为补白; false为不补白;
      * @return
      * @throws IOException
      * @see [类、类#方法、类#成员]
@@ -181,16 +185,50 @@ public class BarcodeFactory
         return (BufferedImage)destImage;
     }
     
-    public void encode(String content,int width, int height,String srcImagePath,OutputStream out)
+    /** <一句话功能简述>
+     * <功能详细描述> 带内嵌图片二维码生成工具
+     * @param content 二位码数据
+     * @param width 二位码宽度
+     * @param height 二位码高度
+     * @param srcImagePath 二位码内嵌图片地址
+     * @param out 输出流
+     * @see [类、类#方法、类#成员]
+     */
+    public void encode(String content, int width, int height, String srcImagePath, OutputStream out)
     {
         try
         {
-            ImageIO.write(genBarcode(content, width, height, srcImagePath),"", out);
+            ImageIO.write(genBarcode(content, width, height, srcImagePath), "", out);
         }
         catch (Exception e)
         {
-            e.printStackTrace();
+            throw new ServiceException("生产二位码失败", e);
         }
-       
+        
+    }
+    
+    /** <一句话功能简述>
+     * <功能详细描述> 无内嵌图片二维码生成工具
+     * @param content 二位码数据
+     * @param width 二位码宽度
+     * @param height 二位码高度
+     * @param srcImagePath 二位码内嵌图片地址
+     * @param out 输出流
+     * @see [类、类#方法、类#成员]
+     */
+    public void encode(String content, int width, int height, OutputStream out)
+    {
+        try
+        {
+            Map<EncodeHintType, Object> hints = new HashMap<EncodeHintType, Object>();
+            hints.put(EncodeHintType.CHARACTER_SET, "UTF-8");
+            BitMatrix bitMatrix = new MultiFormatWriter().encode(content, BarcodeFormat.QR_CODE, width, height, hints);// 生成矩阵
+            MatrixToImageWriter.writeToStream(bitMatrix, "png", out);
+        }
+        catch (Exception e)
+        {
+            throw new ServiceException("生产二位码失败", e);
+        }
+        
     }
 }
