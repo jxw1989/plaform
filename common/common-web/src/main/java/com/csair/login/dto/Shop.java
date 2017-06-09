@@ -3,7 +3,6 @@ package com.csair.login.dto;
 import java.util.Date;
 
 import com.alibaba.fastjson.annotation.JSONField;
-import com.csair.common.type.Status;
 
 public class Shop {
 	private String name;
@@ -15,7 +14,6 @@ public class Shop {
 	private double price = 100d;
 	@JSONField(format = "#0.0")
 	private float rate = 7f;
-	private Status status = Status.OK;
 
 	public String getName() {
 		return name;
@@ -55,14 +53,6 @@ public class Shop {
 
 	public void setRate(float rate) {
 		this.rate = rate;
-	}
-
-	public Status getStatus() {
-		return status;
-	}
-
-	public void setStatus(Status status) {
-		this.status = status;
 	}
 
 }
