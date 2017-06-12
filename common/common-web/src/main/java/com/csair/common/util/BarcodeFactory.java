@@ -202,7 +202,7 @@ public class BarcodeFactory
         }
         catch (Exception e)
         {
-            throw new ServiceException("生产二位码失败", e);
+            throw new ServiceException("二位码生成失败", e);
         }
         
     }
@@ -227,7 +227,7 @@ public class BarcodeFactory
         }
         catch (Exception e)
         {
-            throw new ServiceException("生产二位码失败", e);
+            throw new ServiceException("二位码生成失败", e);
         }
         
     }
