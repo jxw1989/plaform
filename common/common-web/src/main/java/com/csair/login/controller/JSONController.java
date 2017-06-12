@@ -20,12 +20,5 @@ public class JSONController {
         sp.setStaffName(new String[]{"Staffname1","Staffname2"});
         return sp;
     }
-    //测试用
-    @RequestMapping("")
-    public String index()
-    {
-        return "index";
-    }
-    
    
 }
