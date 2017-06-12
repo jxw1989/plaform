@@ -10,6 +10,8 @@
  */
 package com.csair.order.dto;
 
+import java.util.List;
+
 /**
  * <一句话功能简述> <功能详细描述>
  * 
@@ -24,9 +26,11 @@ public class OrderInfo
     
     private String[] awbNo;// 运单号
     
-    private String changeOrderNo;
+    private String changeOrderNo;// 变更单号
     
-    private String cargo;
+    private String cargo;// 货物
+    
+    private List<FlightInfo> flightInfos;
     
     public String getOrderNo()
     {
@@ -66,6 +70,16 @@ public class OrderInfo
     public void setCargo(String cargo)
     {
         this.cargo = cargo;
+    }
+    
+    public List<FlightInfo> getFlightInfos()
+    {
+        return flightInfos;
+    }
+    
+    public void setFlightInfos(List<FlightInfo> flightInfos)
+    {
+        this.flightInfos = flightInfos;
     }
     
 }
