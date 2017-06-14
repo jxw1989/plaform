@@ -45,6 +45,8 @@
 				class="org.springframework.mobile.device.DeviceWebArgumentResolver" />
 			<beans:bean
 				class="org.springframework.mobile.device.site.SitePreferenceWebArgumentResolver" />
+		    <!-- 注入公共字段参数注入 -->
+		    <beans:bean class="com.csair.common.resolver.BeanArgumentResolver"/>
 		</argument-resolvers>
 	</annotation-driven>
 	<interceptors>
