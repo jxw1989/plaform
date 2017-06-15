@@ -49,6 +49,9 @@
 		    <beans:bean class="com.csair.common.resolver.BeanArgumentResolver"/>
 		</argument-resolvers>
 	</annotation-driven>
+	<mvc:resources mapping="/web/js/**" location="/web/js/"/>
+	<mvc:resources mapping="/web/css/**" location="/web/css/"/>
+	<mvc:resources mapping="/web/images/**" location="/web/images/"/>
 	<interceptors>
 		<!-- On pre-handle, resolve the device that originated the web request -->
 		<beans:bean
