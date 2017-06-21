@@ -24,11 +24,15 @@ import com.alibaba.fastjson.annotation.JSONField;
  */
 public class FlightInfo
 {
-    private String flightNo;//航班号
+    private String flightNo;// 航班号
     
     private String dep;// 起点
     
     private String des;// 终点
+    
+    private String depTime;
+    
+    private String desTime;
     
     @JSONField(format = "yyyyMMdd")
     private Date flightDate;// 航班日期
@@ -61,6 +65,26 @@ public class FlightInfo
     public void setDes(String des)
     {
         this.des = des;
+    }
+    
+    public String getDepTime()
+    {
+        return depTime;
+    }
+    
+    public void setDepTime(String depTime)
+    {
+        this.depTime = depTime;
+    }
+    
+    public String getDesTime()
+    {
+        return desTime;
+    }
+    
+    public void setDesTime(String desTime)
+    {
+        this.desTime = desTime;
     }
     
     public Date getFlightDate()
