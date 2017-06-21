@@ -13,7 +13,7 @@ package com.csair.order.dto;
 import java.util.List;
 
 /**
- * <一句话功能简述> <功能详细描述>
+ * <一句话功能简述> <功能详细描述>订单详情实体
  * 
  * @author jinxiuwei
  * @version [版本号, Jun 9, 2017]
