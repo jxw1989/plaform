@@ -1,9 +1,7 @@
 package com.csair.menu.domain;
 
-import java.util.List;
-
 /**
- * Created by tusm on 2017/6/15.
+ * Created by jinxiuwei on 2017/6/15.
  */
 public class MenuItem {
     private String menuId;
