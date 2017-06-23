@@ -39,7 +39,7 @@ public class MenuServiceImpl implements MenuService {
         menuItems.add(menuItem);
         menuItems.add(menuItem1);
         menuItems.add(menuItem2);
-        return null;
+        return menuItems;
     }
 
     @Override
