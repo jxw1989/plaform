@@ -23,7 +23,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.imageio.ImageIO;
-import com.csair.common.exception.ServiceException;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
 import com.google.zxing.MultiFormatWriter;
@@ -185,8 +184,9 @@ public class BarcodeFactory
         return (BufferedImage)destImage;
     }
     
-    /** <一句话功能简述>
-     * <功能详细描述> 带内嵌图片二维码生成工具
+    /**
+     * <一句话功能简述> <功能详细描述> 带内嵌图片二维码生成工具
+     * 
      * @param content 二位码数据
      * @param width 二位码宽度
      * @param height 二位码高度
@@ -202,13 +202,14 @@ public class BarcodeFactory
         }
         catch (Exception e)
         {
-            throw new ServiceException("二位码生成失败", e);
+            throw new RuntimeException("二位码生成失败", e);
         }
         
     }
     
-    /** <一句话功能简述>
-     * <功能详细描述> 无内嵌图片二维码生成工具
+    /**
+     * <一句话功能简述> <功能详细描述> 无内嵌图片二维码生成工具
+     * 
      * @param content 二位码数据
      * @param width 二位码宽度
      * @param height 二位码高度
@@ -227,7 +228,7 @@ public class BarcodeFactory
         }
         catch (Exception e)
         {
-            throw new ServiceException("二位码生成失败", e);
+            throw new RuntimeException("二位码生成失败", e);
         }
         
     }
