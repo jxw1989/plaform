@@ -22,15 +22,29 @@ import java.util.List;
  */
 public class OrderDetailInfo
 {
+    private String billNo;// 支付流水号
+    
     private String orderNo;// 订单号
+    
+    private String[] awbPrefix;// 运单号前缀
     
     private String[] awbNo;// 运单号
     
-    private String changeOrderNo;// 变更单号
+    private ChangeOrderInfo changeOrderInfo;// 变更信息
     
     private String cargo;// 货物
     
     private List<FlightInfo> flightInfos;
+    
+    public String getBillNo()
+    {
+        return billNo;
+    }
+    
+    public void setBillNo(String billNo)
+    {
+        this.billNo = billNo;
+    }
     
     public String getOrderNo()
     {
@@ -42,6 +56,16 @@ public class OrderDetailInfo
         this.orderNo = orderNo;
     }
     
+    public String[] getAwbPrefix()
+    {
+        return awbPrefix;
+    }
+    
+    public void setAwbPrefix(String[] awbPrefix)
+    {
+        this.awbPrefix = awbPrefix;
+    }
+    
     public String[] getAwbNo()
     {
         return awbNo;
@@ -51,17 +75,18 @@ public class OrderDetailInfo
     {
         this.awbNo = awbNo;
     }
+   
     
-    public String getChangeOrderNo()
+    public ChangeOrderInfo getChangeOrderInfo()
     {
-        return changeOrderNo;
+        return changeOrderInfo;
     }
-    
-    public void setChangeOrderNo(String changeOrderNo)
+
+    public void setChangeOrderInfo(ChangeOrderInfo changeOrderInfo)
     {
-        this.changeOrderNo = changeOrderNo;
+        this.changeOrderInfo = changeOrderInfo;
     }
-    
+
     public String getCargo()
     {
         return cargo;

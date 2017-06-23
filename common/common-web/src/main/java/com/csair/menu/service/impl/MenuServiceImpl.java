@@ -9,9 +9,11 @@ import java.util.List;
 /**
  * Created by jinxiuwei on 2017/6/15.
  */
-public class MenuServiceImpl implements MenuService {
+public class MenuServiceImpl implements MenuService
+{
     @Override
-    public List<MenuItem> getMenusByStaffId(String staffId) {
+    public List<MenuItem> getMenusByStaffId(String staffId)
+    {
         MenuItem menuItem = new MenuItem();
         menuItem.setMenuId("1");
         menuItem.setMenuName("用户管理");
@@ -39,21 +41,26 @@ public class MenuServiceImpl implements MenuService {
         menuItems.add(menuItem);
         menuItems.add(menuItem1);
         menuItems.add(menuItem2);
-        return null;
+        menuItems.add(menuItem3);
+        menuItems.add(menuItem4);
+        return menuItems;
     }
-
+    
     @Override
-    public boolean addMenuItem(MenuItem menuItem) {
+    public boolean addMenuItem(MenuItem menuItem)
+    {
         return false;
     }
-
+    
     @Override
-    public boolean updateMenuItem(MenuItem menuItem) {
+    public boolean updateMenuItem(MenuItem menuItem)
+    {
         return false;
     }
-
+    
     @Override
-    public boolean deleteMenuItemByMenuId(String menuId) {
+    public boolean deleteMenuItemByMenuId(String menuId)
+    {
         return false;
     }
 }

@@ -1,18 +1,18 @@
 package com.csair.common.resolver;
 
-import com.alibaba.fastjson.JSONObject;
-import com.csair.common.base.JsonResult;
-import com.csair.common.exception.BusinessException;
-import com.csair.common.exception.ServiceException;
-import org.springframework.web.servlet.HandlerExceptionResolver;
-import org.springframework.web.servlet.ModelAndView;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.web.servlet.HandlerExceptionResolver;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.csair.common.base.JsonResult;
+import com.csair.common.exception.AppException;
 
 /**
  * Created by jinixuwei on 2017/6/14.
@@ -29,7 +29,7 @@ public class ExceptionResolver implements HandlerExceptionResolver {
             // 为安全起见，只有业务异常我们对前端可见，否则否则统一归为系统异常
             Map<String, Object> map = new HashMap<String, Object>();
             map.put("success", false);
-            if (e instanceof BusinessException) {
+            if (e instanceof AppException) {
                 map.put("errorMsg", e.getMessage());
             } else {
                 map.put("errorMsg", "系统异常！");
@@ -46,7 +46,7 @@ public class ExceptionResolver implements HandlerExceptionResolver {
                 Map<String, Object> map = new HashMap<String, Object>();
                 map.put("success", false);
                 // 为安全起见，只有业务异常我们对前端可见，否则统一归为系统异常
-                if (e instanceof BusinessException) {
+                if (e instanceof AppException) {
                     map.put("errorMsg", e.getMessage());
                 } else {
                     map.put("errorMsg", "系统异常！");
@@ -65,15 +65,16 @@ public class ExceptionResolver implements HandlerExceptionResolver {
     }
     private String getExceptionMsg(Exception e)
     {
-        if(e instanceof BusinessException)
+        if(e instanceof AppException)
         {
             return e.getMessage();
         }
-        else if(e instanceof ServiceException)
+        else if(e instanceof AppException)
         {
             return e.getMessage();
         }else{
-            return "";
+            e.printStackTrace();
+            return "未知异常";
         }
     }
 }
