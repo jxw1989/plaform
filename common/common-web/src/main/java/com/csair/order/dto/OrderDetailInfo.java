@@ -30,7 +30,7 @@ public class OrderDetailInfo
     
     private ChangeOrderInfo changeOrderInfo;// 变更信息
     
-    private String cargo;// 货物
+    private CargoInfo cargoInfo;// 货物
     
     private List<FlightInfo> flightInfos;
     
@@ -74,14 +74,14 @@ public class OrderDetailInfo
         this.changeOrderInfo = changeOrderInfo;
     }
     
-    public String getCargo()
+    public CargoInfo getCargoInfo()
     {
-        return cargo;
+        return cargoInfo;
     }
     
-    public void setCargo(String cargo)
+    public void setCargoInfo(CargoInfo cargoInfo)
     {
-        this.cargo = cargo;
+        this.cargoInfo = cargoInfo;
     }
     
     public List<FlightInfo> getFlightInfos()
