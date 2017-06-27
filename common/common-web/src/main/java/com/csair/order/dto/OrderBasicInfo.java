@@ -25,7 +25,7 @@ public class OrderBasicInfo
 {
     private String orderNo;// 订单号
     
-    private String awbNo;// 运单号
+    private List<AwbInfo> awbInfos;// 运单号
     
     private List<FlightInfo> flightInfos;
     
@@ -45,14 +45,14 @@ public class OrderBasicInfo
         this.orderNo = orderNo;
     }
     
-    public String getAwbNo()
+    public List<AwbInfo> getAwbInfos()
     {
-        return awbNo;
+        return awbInfos;
     }
     
-    public void setAwbNo(String awbNo)
+    public void setAwbInfos(List<AwbInfo> awbInfos)
     {
-        this.awbNo = awbNo;
+        this.awbInfos = awbInfos;
     }
     
     public List<FlightInfo> getFlightInfos()

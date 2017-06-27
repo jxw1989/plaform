@@ -26,9 +26,7 @@ public class OrderDetailInfo
     
     private String orderNo;// 订单号
     
-    private String[] awbPrefix;// 运单号前缀
-    
-    private String[] awbNo;// 运单号
+    private List<AwbInfo> awbInfos;
     
     private ChangeOrderInfo changeOrderInfo;// 变更信息
     
@@ -56,37 +54,26 @@ public class OrderDetailInfo
         this.orderNo = orderNo;
     }
     
-    public String[] getAwbPrefix()
+    public List<AwbInfo> getAwbInfos()
     {
-        return awbPrefix;
+        return awbInfos;
     }
     
-    public void setAwbPrefix(String[] awbPrefix)
+    public void setAwbInfos(List<AwbInfo> awbInfos)
     {
-        this.awbPrefix = awbPrefix;
+        this.awbInfos = awbInfos;
     }
-    
-    public String[] getAwbNo()
-    {
-        return awbNo;
-    }
-    
-    public void setAwbNo(String[] awbNo)
-    {
-        this.awbNo = awbNo;
-    }
-   
     
     public ChangeOrderInfo getChangeOrderInfo()
     {
         return changeOrderInfo;
     }
-
+    
     public void setChangeOrderInfo(ChangeOrderInfo changeOrderInfo)
     {
         this.changeOrderInfo = changeOrderInfo;
     }
-
+    
     public String getCargo()
     {
         return cargo;
