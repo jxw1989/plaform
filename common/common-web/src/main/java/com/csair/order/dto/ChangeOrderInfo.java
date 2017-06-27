@@ -27,7 +27,7 @@ public class ChangeOrderInfo
     
     private Map<String, String> changeContent;// 变更内容
     
-    private Map<String, BigDecimal> changeExpenses;//变更费用
+    private Map<String, BigDecimal> changeExpenses;// 变更费用
     
     public String getChangeOrderNo()
     {
