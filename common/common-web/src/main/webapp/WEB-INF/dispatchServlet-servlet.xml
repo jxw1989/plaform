@@ -73,4 +73,5 @@
 		<beans:property name="mobilePrefix" value="mobile/" />
 		<beans:property name="tabletPrefix" value="tablet/" />
 	</beans:bean>
+	<beans:bean class="com.csair.common.resolver.ExceptionResolver"></beans:bean>
 </beans:beans>
