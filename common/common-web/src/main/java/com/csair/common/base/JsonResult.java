@@ -5,16 +5,40 @@ package com.csair.common.base;
  */
 public class JsonResult
 {
+    /**
+     * 请求结果状态
+     */
     private boolean success = true;
     
+    /**
+     * 状态码
+     */
     private String errorCode;
     
+    /**
+     * 异常信息
+     */
     private String exceptionMessage;
     
+    /**
+     * 异常堆栈信息
+     */
     private String exceptionStack;
     
+    /**
+     * 正常结果返回对象
+     */
     private Object returnObject = null;
     
+    /**
+     * <默认构造函数>
+     * 
+     * @param success 返回是否成功
+     * @param errorCode 错误码
+     * @param exceptionMessage 异常信息
+     * @param exceptionStack 异常堆栈信息
+     * @param returnObject 正常返回结果
+     */
     public JsonResult(boolean success, String errorCode, String exceptionMessage, String exceptionStack,
         Object returnObject)
     {
