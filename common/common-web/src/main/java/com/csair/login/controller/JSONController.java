@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.csair.common.exception.AppException;
+import com.csair.common.exception.CommonException;
 import com.csair.login.dto.Shop;
 
 
@@ -18,6 +20,10 @@ public class JSONController {
         Shop sp = new Shop();
         sp.setName(name);
         sp.setStaffName(new String[]{"Staffname1","Staffname2"});
+        if(true)
+        {
+            throw new CommonException("aa");
+        }
         return sp;
     }
    
