@@ -13,12 +13,12 @@ public class JsonResult
     /**
      * 状态码
      */
-    private String errorCode;
+    private String code;
     
     /**
      * 异常信息
      */
-    private String exceptionMessage;
+    private String message;
     
     /**
      * 异常堆栈信息
@@ -34,17 +34,16 @@ public class JsonResult
      * <默认构造函数>
      * 
      * @param success 返回是否成功
-     * @param errorCode 错误码
-     * @param exceptionMessage 异常信息
+     * @param code 错误码
+     * @param message 异常信息
      * @param exceptionStack 异常堆栈信息
      * @param returnObject 正常返回结果
      */
-    public JsonResult(boolean success, String errorCode, String exceptionMessage, String exceptionStack,
-        Object returnObject)
+    public JsonResult(boolean success, String code, String message, String exceptionStack, Object returnObject)
     {
         this.success = success;
-        this.errorCode = errorCode;
-        this.exceptionMessage = exceptionMessage;
+        this.code = code;
+        this.message = message;
         this.exceptionStack = exceptionStack;
         this.returnObject = returnObject;
     }
@@ -65,24 +64,24 @@ public class JsonResult
         this.success = success;
     }
     
-    public String getErrorCode()
+    public String getCode()
     {
-        return errorCode;
+        return code;
     }
     
-    public void setErrorCode(String errorCode)
+    public void setCode(String code)
     {
-        this.errorCode = errorCode;
+        this.code = code;
     }
     
-    public String getExceptionMessage()
+    public String getMessage()
     {
-        return exceptionMessage;
+        return message;
     }
     
-    public void setExceptionMessage(String exceptionMessage)
+    public void setMessage(String message)
     {
-        this.exceptionMessage = exceptionMessage;
+        this.message = message;
     }
     
     public String getExceptionStack()
@@ -104,4 +103,5 @@ public class JsonResult
     {
         this.returnObject = returnObject;
     }
+    
 }
