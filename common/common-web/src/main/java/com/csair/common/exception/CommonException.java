@@ -20,6 +20,10 @@ package com.csair.common.exception;
  */
 public class CommonException extends AppException
 {
+    /**
+     * 注释内容
+     */
+    private static final long serialVersionUID = 1L;
     
     /**
      * <默认构造函数>
@@ -29,12 +33,7 @@ public class CommonException extends AppException
     public CommonException(String msg)
     {
         super(msg);
-        // TODO Auto-generated constructor stub
     }
     
-    /**
-     * 注释内容
-     */
-    private static final long serialVersionUID = 1L;
     
 }
