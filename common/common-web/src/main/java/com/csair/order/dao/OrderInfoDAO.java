@@ -12,7 +12,9 @@ package com.csair.order.dao;
 
 import java.util.List;
 
-import com.csair.order.domain.OrderBasicInfo;
+import org.springframework.stereotype.Repository;
+
+import com.csair.order.dto.OrderBasicInfo;
 
 /**
  * <一句话功能简述> <功能详细描述>
@@ -22,6 +24,7 @@ import com.csair.order.domain.OrderBasicInfo;
  * @see [相关类/方法]
  * @since [产品/模块版本]
  */
+@Repository
 public interface OrderInfoDAO
 {
    public List<OrderBasicInfo> getOrderBasicInfo();
