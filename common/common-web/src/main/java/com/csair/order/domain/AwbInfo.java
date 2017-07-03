@@ -26,7 +26,7 @@ public class AwbInfo
     
     private String awbNo;
     
-    private String awbPostFix;
+    private String awbPostfix;
     
     public String getOrderId()
     {
@@ -58,14 +58,14 @@ public class AwbInfo
         this.awbNo = awbNo;
     }
     
-    public String getAwbPostFix()
+    public String getAwbPostfix()
     {
-        return awbPostFix;
+        return awbPostfix;
     }
     
-    public void setAwbPostFix(String awbPostFix)
+    public void setAwbPostfix(String awbPostfix)
     {
-        this.awbPostFix = awbPostFix;
+        this.awbPostfix = awbPostfix;
     }
     
 }
