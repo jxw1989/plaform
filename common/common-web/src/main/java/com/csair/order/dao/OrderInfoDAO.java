@@ -10,6 +10,10 @@
  */
 package com.csair.order.dao;
 
+import java.util.List;
+
+import com.csair.order.domain.OrderBasicInfo;
+
 /**
  * <一句话功能简述> <功能详细描述>
  * 
@@ -18,7 +22,7 @@ package com.csair.order.dao;
  * @see [相关类/方法]
  * @since [产品/模块版本]
  */
-public class OrderInfoDAO
+public interface OrderInfoDAO
 {
-    
+   public List<OrderBasicInfo> getOrderBasicInfo();
 }
