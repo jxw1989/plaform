@@ -74,4 +74,24 @@ public class OrderBasicInfo
         this.orderAmount = orderAmount;
     }
     
+    public AwbInfo getAwbInfo()
+    {
+        return awbInfo;
+    }
+    
+    public void setAwbInfo(AwbInfo awbInfo)
+    {
+        this.awbInfo = awbInfo;
+    }
+    
+    public List<FlightInfo> getFlightInfos()
+    {
+        return flightInfos;
+    }
+    
+    public void setFlightInfos(List<FlightInfo> flightInfos)
+    {
+        this.flightInfos = flightInfos;
+    }
+    
 }
