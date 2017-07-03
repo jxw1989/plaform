@@ -12,6 +12,9 @@ package com.csair.order.dto;
 
 import java.util.List;
 
+import com.csair.order.domain.AwbInfo;
+import com.csair.order.domain.FlightInfo;
+
 /**
  * <一句话功能简述> <功能详细描述>订单详情实体
  * 

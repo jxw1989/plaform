@@ -13,6 +13,9 @@ package com.csair.order.dto;
 import java.math.BigDecimal;
 import java.util.List;
 
+import com.csair.order.domain.AwbInfo;
+import com.csair.order.domain.FlightInfo;
+
 /**
  * <一句话功能简述>订单基本信息实体 <功能详细描述>
  * 
@@ -23,7 +26,7 @@ import java.util.List;
  */
 public class OrderBasicInfo
 {
-    private String orderNo;// 订单号
+    private String orderId;// 订单号
     
     private List<AwbInfo> awbInfos;// 运单号
     
@@ -35,14 +38,14 @@ public class OrderBasicInfo
     
     private BigDecimal payAmount;// 待支付金额
     
-    public String getOrderNo()
+    public String getOrderId()
     {
-        return orderNo;
+        return orderId;
     }
     
-    public void setOrderNo(String orderNo)
+    public void setOrderId(String orderId)
     {
-        this.orderNo = orderNo;
+        this.orderId = orderId;
     }
     
     public List<AwbInfo> getAwbInfos()
