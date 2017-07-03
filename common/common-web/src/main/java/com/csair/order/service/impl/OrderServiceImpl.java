@@ -12,8 +12,10 @@ package com.csair.order.service.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.csair.order.dao.OrderInfoDAO;
 import com.csair.order.dto.OrderBasicInfo;
 import com.csair.order.dto.OrderDetailInfo;
 import com.csair.order.service.OrderService;
@@ -30,10 +32,13 @@ import com.csair.order.service.OrderService;
 public class OrderServiceImpl implements OrderService
 {
     
+    @Autowired
+    private OrderInfoDAO orderInfoDAO;
+    
     @Override
     public List<OrderBasicInfo> getOrderInfoList()
     {
-        return null;
+        return orderInfoDAO.getOrderBasicInfo();
     }
     
     @Override
