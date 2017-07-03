@@ -10,6 +10,8 @@
  */
 package com.csair.order.domain;
 
+import java.util.List;
+
 /**
  * <一句话功能简述> <功能详细描述>
  * 
@@ -29,6 +31,8 @@ public class OrderInfo
     private String orderAmount;
     
     private AwbInfo awbInfo;
+    
+    private List<FlightInfo> flightInfos;
     
     public String getOrderId()
     {
@@ -68,6 +72,26 @@ public class OrderInfo
     public void setOrderAmount(String orderAmount)
     {
         this.orderAmount = orderAmount;
+    }
+    
+    public AwbInfo getAwbInfo()
+    {
+        return awbInfo;
+    }
+    
+    public void setAwbInfo(AwbInfo awbInfo)
+    {
+        this.awbInfo = awbInfo;
+    }
+    
+    public List<FlightInfo> getFlightInfos()
+    {
+        return flightInfos;
+    }
+    
+    public void setFlightInfos(List<FlightInfo> flightInfos)
+    {
+        this.flightInfos = flightInfos;
     }
     
 }
