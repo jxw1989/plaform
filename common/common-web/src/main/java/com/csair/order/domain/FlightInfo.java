@@ -12,6 +12,8 @@ package com.csair.order.domain;
 
 import java.util.Date;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 /**
  * <一句话功能简述> <功能详细描述>
  * 
@@ -26,14 +28,17 @@ public class FlightInfo
     
     private String flightNo;
     
+    @JSONField(format = "yyyyMMdd")
     private Date flightDate;
     
     private String dep;
     
     private String des;
     
+    @JSONField(format = "HH:mm")
     private Date depTime;
     
+    @JSONField(format = "HH:mm")
     private Date desTime;
     
     public String getOrderId()
