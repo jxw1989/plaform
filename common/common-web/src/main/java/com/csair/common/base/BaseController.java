@@ -33,7 +33,7 @@ public abstract class BaseController
         JsonResult result = null;
         if (null == code)
         {
-            result = new JsonResult(false, "", msg, null, null);
+            result = new JsonResult(false, CodeEnum.ERROR.getCode(), msg, null, null);
         }
         else
         {
@@ -72,7 +72,7 @@ public abstract class BaseController
      */
     public Object renderSuccess(String msg)
     {
-        JsonResult result = new JsonResult(true, "", msg, null, null);
+        JsonResult result = new JsonResult(true, CodeEnum.ERROR.getCode(), msg, null, null);
         return result;
     }
     
@@ -84,7 +84,7 @@ public abstract class BaseController
      */
     public Object renderSuccess(Object obj)
     {
-        JsonResult result = new JsonResult(true, "", "", null, obj);
+        JsonResult result = new JsonResult(true, CodeEnum.SUCCESS.getCode(), CodeEnum.SUCCESS.getMsg(), null, obj);
         return result;
     }
 }
