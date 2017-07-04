@@ -26,7 +26,7 @@ import com.csair.order.domain.FlightInfo;
  */
 public class OrderBasicInfo
 {
-    private String orderId;// 订单号
+    private String orderNo;// 订单号
     
     private List<AwbInfo> awbInfos;// 运单号
     
@@ -38,16 +38,18 @@ public class OrderBasicInfo
     
     private BigDecimal payAmount;// 待支付金额
     
-    public String getOrderId()
-    {
-        return orderId;
-    }
     
-    public void setOrderId(String orderId)
-    {
-        this.orderId = orderId;
-    }
     
+    public String getOrderNo()
+    {
+        return orderNo;
+    }
+
+    public void setOrderNo(String orderNo)
+    {
+        this.orderNo = orderNo;
+    }
+
     public List<AwbInfo> getAwbInfos()
     {
         return awbInfos;

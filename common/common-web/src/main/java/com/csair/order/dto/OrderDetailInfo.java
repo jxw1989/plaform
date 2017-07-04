@@ -13,6 +13,8 @@ package com.csair.order.dto;
 import java.util.List;
 
 import com.csair.order.domain.AwbInfo;
+import com.csair.order.domain.CargoInfo;
+import com.csair.order.domain.ChangeOrderInfo;
 import com.csair.order.domain.FlightInfo;
 
 /**
