@@ -10,8 +10,9 @@
  */
 package com.csair.order.domain;
 
-import java.math.BigDecimal;
-import java.util.Map;
+import java.util.List;
+
+import com.csair.common.base.KeyPair;
 
 /**
  * <一句话功能简述> <功能详细描述>
@@ -23,12 +24,14 @@ import java.util.Map;
  */
 public class ChangeOrderInfo
 {
+    
     private String changeOrderNo;// 变更单号
     
-    private Map<String, String> changeContent;// 变更内容
+    private List<KeyPair> changeContent;// 变更内容
     
-    private Map<String, BigDecimal> changeExpenses;// 变更费用
+    private List<KeyPair> changeExpenses;// 变更费用
     
+
     public String getChangeOrderNo()
     {
         return changeOrderNo;
@@ -39,22 +42,22 @@ public class ChangeOrderInfo
         this.changeOrderNo = changeOrderNo;
     }
     
-    public Map<String, String> getChangeContent()
+    public List<KeyPair> getChangeContent()
     {
         return changeContent;
     }
     
-    public void setChangeContent(Map<String, String> changeContent)
+    public void setChangeContent(List<KeyPair> changeContent)
     {
         this.changeContent = changeContent;
     }
     
-    public Map<String, BigDecimal> getChangeExpenses()
+    public List<KeyPair> getChangeExpenses()
     {
         return changeExpenses;
     }
     
-    public void setChangeExpenses(Map<String, BigDecimal> changeExpenses)
+    public void setChangeExpenses(List<KeyPair> changeExpenses)
     {
         this.changeExpenses = changeExpenses;
     }

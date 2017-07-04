@@ -24,7 +24,6 @@ import com.alibaba.fastjson.annotation.JSONField;
  */
 public class FlightInfo
 {
-    private String orderId;
     
     private String flightNo;
     
@@ -41,15 +40,6 @@ public class FlightInfo
     @JSONField(format = "HH:mm")
     private Date desTime;
     
-    public String getOrderId()
-    {
-        return orderId;
-    }
-    
-    public void setOrderId(String orderId)
-    {
-        this.orderId = orderId;
-    }
     
     public String getFlightNo()
     {

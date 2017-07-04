@@ -20,7 +20,6 @@ package com.csair.order.domain;
  */
 public class AwbInfo
 {
-    private String orderId;
     
     private String awboPrefix;
     
@@ -28,15 +27,6 @@ public class AwbInfo
     
     private String awbPostfix;
     
-    public String getOrderId()
-    {
-        return orderId;
-    }
-    
-    public void setOrderId(String orderId)
-    {
-        this.orderId = orderId;
-    }
     
     public String getAwboPrefix()
     {

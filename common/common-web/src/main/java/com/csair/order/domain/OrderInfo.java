@@ -22,7 +22,7 @@ import java.util.List;
  */
 public class OrderInfo
 {
-    private String orderId;
+    private String orderNo;
     
     private String goosType;
     
@@ -34,16 +34,18 @@ public class OrderInfo
     
     private List<FlightInfo> flightInfos;
     
-    public String getOrderId()
-    {
-        return orderId;
-    }
+   
     
-    public void setOrderId(String orderId)
+    public String getOrderNo()
     {
-        this.orderId = orderId;
+        return orderNo;
     }
-    
+
+    public void setOrderNo(String orderNo)
+    {
+        this.orderNo = orderNo;
+    }
+
     public String getGoosType()
     {
         return goosType;

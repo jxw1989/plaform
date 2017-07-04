@@ -20,22 +20,21 @@ package com.csair.order.domain;
  */
 public class CargoInfo
 {
+    
     private String goodsType;
     
     private String piece;
     
     private String weight;
-    
-    public CargoInfo(String goodsType, String piece, String weight)
-    {
-        this.goodsType = goodsType;
-        this.piece = piece;
-        this.weight = weight;
-    }
-    
+   
     public String getGoodsType()
     {
         return goodsType;
+    }
+    
+    public void setGoodsType(String goodsType)
+    {
+        this.goodsType = goodsType;
     }
     
     public String getPiece()
@@ -43,9 +42,19 @@ public class CargoInfo
         return piece;
     }
     
+    public void setPiece(String piece)
+    {
+        this.piece = piece;
+    }
+    
     public String getWeight()
     {
         return weight;
+    }
+    
+    public void setWeight(String weight)
+    {
+        this.weight = weight;
     }
     
 }
