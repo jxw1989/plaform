@@ -24,11 +24,11 @@ public class QueryParam
     
     private String changeOrderNo;
     
-    private String awbPrefix;
+    private String awboPrefix;
     
     private String awbNo;
     
-    private String awbPostFix;
+    private String awbPostfix;
     
     public String getOrderNo()
     {
@@ -50,16 +50,6 @@ public class QueryParam
         this.changeOrderNo = changeOrderNo;
     }
     
-    public String getAwbPrefix()
-    {
-        return awbPrefix;
-    }
-    
-    public void setAwbPrefix(String awbPrefix)
-    {
-        this.awbPrefix = awbPrefix;
-    }
-    
     public String getAwbNo()
     {
         return awbNo;
@@ -70,14 +60,24 @@ public class QueryParam
         this.awbNo = awbNo;
     }
     
-    public String getAwbPostFix()
+    public String getAwboPrefix()
     {
-        return awbPostFix;
+        return awboPrefix;
     }
     
-    public void setAwbPostFix(String awbPostFix)
+    public void setAwboPrefix(String awboPrefix)
     {
-        this.awbPostFix = awbPostFix;
+        this.awboPrefix = awboPrefix;
+    }
+    
+    public String getAwbPostfix()
+    {
+        return awbPostfix;
+    }
+    
+    public void setAwbPostfix(String awbPostfix)
+    {
+        this.awbPostfix = awbPostfix;
     }
     
 }
