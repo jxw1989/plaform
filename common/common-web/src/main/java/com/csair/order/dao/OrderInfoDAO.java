@@ -15,6 +15,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import com.csair.order.dto.OrderBasicInfo;
+import com.csair.order.dto.OrderDetailInfo;
 
 /**
  * <一句话功能简述> <功能详细描述>
@@ -27,5 +28,19 @@ import com.csair.order.dto.OrderBasicInfo;
 @Repository
 public interface OrderInfoDAO
 {
-   public List<OrderBasicInfo> getOrderBasicInfo();
+    /**
+     * <一句话功能简述> <功能详细描述>
+     * 
+     * @return
+     * @see [类、类#方法、类#成员]
+     */
+    public List<OrderBasicInfo> getOrderBasicInfo();
+    
+    /**
+     * <一句话功能简述> <功能详细描述>
+     * 
+     * @return
+     * @see [类、类#方法、类#成员]
+     */
+    public OrderDetailInfo getOrderDetailInfo();
 }
