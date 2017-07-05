@@ -45,7 +45,7 @@ public class OrderServiceImpl implements OrderService
     public OrderDetailInfo getOrderDetailInfo(String orderNo, String changeOrderNo, String awbPrefix, String awbNo,
         String awbPostFix)
     {
-        return null;
+        return orderInfoDAO.getOrderDetailInfo();
     }
     
 }
