@@ -10,11 +10,13 @@
  */
 package com.csair.order.controller;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.csair.common.base.BaseController;
 import com.csair.order.dto.QueryParam;
 import com.csair.order.service.OrderService;
 
@@ -28,7 +30,7 @@ import com.csair.order.service.OrderService;
  */
 @Controller
 @RequestMapping("orderInterface")
-public class OrderQueryInterface
+public class OrderQueryInterface extends BaseController
 {
     @Autowired
     private OrderService orderService;
@@ -37,15 +39,25 @@ public class OrderQueryInterface
     @ResponseBody
     public Object orderList()
     {
-        return orderService.getOrderInfoList();
+        return renderSuccess(orderService.getOrderInfoList());
     }
     
+    @RequestMapping("/detail")
+    @ResponseBody
     public Object orderDetail(QueryParam queryParam)
     {
-        return orderService.getOrderDetailInfo(queryParam.getOrderNo(),
-            queryParam.getChangeOrderNo(),
-            queryParam.getAwbPrefix(),
-            queryParam.getAwbNo(),
-            queryParam.getAwbPostFix());
+        if (StringUtils.isBlank(queryParam.getOrderNo())
+            && (StringUtils.isBlank(queryParam.getAwboPrefix()) || StringUtils.isBlank(queryParam.getAwbNo())))
+        {
+            return renderError("参数错误");
+        }
+        else
+        {
+            return renderSuccess(orderService.getOrderDetailInfo(queryParam.getOrderNo(),
+                queryParam.getChangeOrderNo(),
+                queryParam.getAwboPrefix(),
+                queryParam.getAwbNo(),
+                queryParam.getAwbPostfix()));
+        }
     }
 }
