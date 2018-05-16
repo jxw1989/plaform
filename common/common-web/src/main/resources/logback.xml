@@ -2,11 +2,28 @@
 <configuration scan="true" scanPeriod="60 second" debug="false">
 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
 		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-			<Pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{56}.%method:%L %msg%n</Pattern>
-		    <charset>UTF-8</charset>
+			<pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{106}.%method:%L %msg%n</pattern>
+			<charset>UTF-8</charset>
 		</encoder>
 	</appender>
-	<logger name="org" additivity="false" level="INFO">
-		<appender-ref ref="STDOUT" />
+	<appender name="file"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>common.log</file>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{106}.%method:%L %msg%n</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<!-- 每天一归档 -->
+			<fileNamePattern>common-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<!-- 单个日志文件最多 100MB, 60天的日志周期，最大不能超过20GB -->
+			<maxFileSize>1MB</maxFileSize>
+			<maxHistory>1</maxHistory>
+			<totalSizeCap>20GB</totalSizeCap>
+		</rollingPolicy>
+	</appender>
+	<logger name="org" level="TRACE" additivity="false">
+		<appender-ref ref="file" />
 	</logger>
 </configuration>
