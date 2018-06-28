@@ -24,6 +24,6 @@
 		</rollingPolicy>
 	</appender>
 	<logger name="org" level="TRACE" additivity="false">
-		<appender-ref ref="file" />
+		<appender-ref ref="STDOUT" />
 	</logger>
 </configuration>
