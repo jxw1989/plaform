@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" scanPeriod="60 second" debug="false">
-    <property name="logDir" value="${mvn.log.dir}" />
-    <property name="appender" value="${log.appender}" />
+    <property name="logDir" value="logs" />
+    <property name="appender" value="STDOUT" />
 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
 		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-			<pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{106}.%method:%L %msg%n</pattern>
+			<pattern>[%level]%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %logger{106}.%method:%L %msg%n</pattern>
 			<charset>UTF-8</charset>
 		</encoder>
 	</appender>
@@ -25,7 +25,7 @@
 			<totalSizeCap>200GB</totalSizeCap>
 		</rollingPolicy>
 	</appender>
-  <root level="INFO">             
+  <root level="TRACE">             
     <appender-ref ref="${appender}"/>
   </root>  
 </configuration>
