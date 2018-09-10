@@ -68,11 +68,6 @@
 			<artifactId>spring-mobile-device</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>1.7.25</version>
-		</dependency>
-		<dependency>
 			<groupId>org.logback-extensions</groupId>
 			<artifactId>logback-ext-spring</artifactId>
 			<exclusions>
@@ -102,11 +97,11 @@
 			<version>1.2.3</version>
 		</dependency>
 		<dependency>
-		    <groupId>net.logstash.logback</groupId>
-		    <artifactId>logstash-logback-encoder</artifactId>
-		    <version>5.2</version>
+			<groupId>net.logstash.logback</groupId>
+			<artifactId>logstash-logback-encoder</artifactId>
+			<version>5.2</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>jcl-over-slf4j</artifactId>
@@ -156,8 +151,32 @@
 			<artifactId>fastjson</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>com.google.collections</groupId>
+			<artifactId>google-collections</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-web</artifactId>
+			<version>1.4.0</version>
+
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-api</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-spring</artifactId>
+			<version>1.4.0</version>
 		</dependency>
 	</dependencies>
 	<build>
@@ -175,5 +194,4 @@
 			</plugin>
 		</plugins>
 	</build>
-	
 </project>
