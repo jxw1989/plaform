@@ -45,6 +45,15 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
 					<archiveClasses>true</archiveClasses>
+					<webResources>
+						<resource>
+							<directory>src/main/resources</directory>
+							<targetPath>WEB-INF/classes</targetPath>
+							<filtering>true</filtering>
+						</resource>
+					</webResources>
+
+
 				</configuration>
 			</plugin>
 		</plugins>

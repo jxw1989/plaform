@@ -165,7 +165,6 @@
 			<groupId>org.apache.shiro</groupId>
 			<artifactId>shiro-web</artifactId>
 			<version>1.4.0</version>
-
 			<exclusions>
 				<exclusion>
 					<groupId>org.slf4j</groupId>
