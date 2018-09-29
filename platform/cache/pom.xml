@@ -8,9 +8,8 @@
 		<artifactId>platform</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>login</artifactId>
-	<name>login</name>
-	<packaging>war</packaging>
+	<artifactId>cache</artifactId>
+	<name>cache</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -25,36 +24,17 @@
 			<groupId>org.mbov</groupId>
 			<artifactId>common</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-api</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.redisson</groupId>
+			<artifactId>redisson</artifactId>
+			 <version>3.7.5</version>
 		</dependency>
 	</dependencies>
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.eclipse.jetty</groupId>
-				<artifactId>jetty-maven-plugin</artifactId>
-				<configuration>
-					<scanIntervalSeconds>0</scanIntervalSeconds>
-					<webApp>
-						<contextPath>/</contextPath>
-					</webApp>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<configuration>
-					<archiveClasses>true</archiveClasses>
-					<webResources>
-						<resource>
-							<directory>src/main/resources</directory>
-							<targetPath>WEB-INF/classes</targetPath>
-							<filtering>true</filtering>
-						</resource>
-					</webResources>
-
-
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
 </project>
