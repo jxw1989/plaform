@@ -55,10 +55,10 @@
 				<version>0.1.4</version>
 			</dependency>
 			<dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>jcl-over-slf4j</artifactId>
-            <version>1.7.6</version>
-            </dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>jcl-over-slf4j</artifactId>
+				<version>1.7.25</version>
+			</dependency>
 			<dependency>
 				<groupId>org.apache.commons</groupId>
 				<artifactId>commons-lang3</artifactId>
@@ -105,6 +105,20 @@
 					<groupId>org.eclipse.jetty</groupId>
 					<artifactId>jetty-maven-plugin</artifactId>
 					<version>9.2.7.v20150116</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.1</version>
+					<configuration>
+						<source>${jdk.version}</source>
+						<target>${jdk.version}</target>
+						<!-- 设置编译的字符集编码和环境编码 -->
+						<encoding>UTF-8</encoding>
+						<compilerArguments>
+							<extdirs>src/main/webapp/WEB-INF/lib</extdirs>
+						</compilerArguments>
+					</configuration>
 				</plugin>
 			</plugins>
 		</pluginManagement>
