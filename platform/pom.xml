@@ -8,9 +8,9 @@
 	<name>platform</name>
 	<url>http://maven.apache.org</url>
 	<properties>
-		<jdk.version>1.8</jdk.version>
-		<spring.version>4.3.4.RELEASE</spring.version>
-		<project.vsersion>0.0.1-SNAPSHOT</project.vsersion>
+		 <jdk.version>1.8</jdk.version>
+		 <spring.version>4.3.4.RELEASE</spring.version>
+		 <project.vsersion>0.0.1-SNAPSHOT</project.vsersion>
 	</properties>
 	<dependencies>
 	</dependencies>
