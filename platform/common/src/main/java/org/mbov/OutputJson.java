@@ -1,7 +1,8 @@
 package org.mbov;
 import java.io.Serializable;
 
-import com.alibaba.fastjson.JSON;
+import org.mbov.util.JsonMapper;
+
 
 public class OutputJson implements Serializable{
 
@@ -43,6 +44,6 @@ public class OutputJson implements Serializable{
         if(null == this.data){
             this.setData(new Object());
         }
-        return JSON.toJSONString(this);
+        return JsonMapper.objectToJson(this);
     }
 }

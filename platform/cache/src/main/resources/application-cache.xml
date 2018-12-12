@@ -22,5 +22,4 @@
 		</constructor-arg>
 	</bean>
 	<bean id="jsonJacksonCodec" class="org.mbov.cache.codec.JsonJacksonCodec" />
-	<bean id="accountService" class="org.mbov.cache.AccountService" />
 </beans>
