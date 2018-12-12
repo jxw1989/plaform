@@ -7,12 +7,12 @@
     http://www.springframework.org/schema/cache/spring-cache.xsd">
 
 	<cache:annotation-driven />
-
 	<bean id="cacheManager" class="org.redisson.spring.cache.RedissonSpringCacheManager">
 		<constructor-arg name="redisson" ref="redissonClient" />
+		<constructor-arg name="codec" ref="jsonJacksonCodec" />
 		<constructor-arg name="config">
 			<map>
-				<entry key="serviceCache">
+				<entry key="cache">
 					<bean class="org.redisson.spring.cache.CacheConfig">
 						<property name="TTL" value="1800000" /> <!-- 30 minutes -->
 						<property name="maxIdleTime" value="900000" /> <!-- 15 minutes -->
@@ -21,6 +21,6 @@
 			</map>
 		</constructor-arg>
 	</bean>
-
+	<bean id="jsonJacksonCodec" class="org.mbov.cache.codec.JsonJacksonCodec" />
 	<bean id="accountService" class="org.mbov.cache.AccountService" />
 </beans>

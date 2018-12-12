@@ -9,9 +9,7 @@
        http://www.springframework.org/schema/context/spring-context.xsd  
        http://redisson.org/schema/redisson  
        http://redisson.org/schema/redisson/redisson.xsd">
-    <bean id="serializationCodec" class="org.redisson.codec.SerializationCodec"></bean>
-	<redisson:client id="redissonClient"
-	     codec-ref="serializationCodec">
+	<redisson:client id="redissonClient">
 		<redisson:single-server address="redis://10.95.58.107:6379"
 		 connection-pool-size="500"
 		 idle-connection-timeout="10000" 
@@ -19,6 +17,7 @@
 		 timeout="3000"
 		 ping-timeout="30000"
 		 database="0"
+		 password="123456"
 		/>
 	</redisson:client>
 </beans>  
