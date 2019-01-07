@@ -18,7 +18,7 @@
 			<bean class="org.mbov.framework.resolver.ResponseArgumentResolver" />
 		</mvc:return-value-handlers>
 		<mvc:message-converters>
-			<bean id="mappingJacksonHttpMessageConverter" 　
+			<bean id="mappingJacksonHttpMessageConverter"
 				class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
 				<property name="supportedMediaTypes">
 					<list>
