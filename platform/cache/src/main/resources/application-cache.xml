@@ -21,5 +21,6 @@
 			</map>
 		</constructor-arg>
 	</bean>
-	<bean id="jsonJacksonCodec" class="org.mbov.cache.codec.JsonJacksonCodec" />
+	<bean id="jsonJacksonCodec" class="org.redisson.codec.JsonJacksonCodec" />
+	<bean id="accountServiceBean" class="org.mbov.cache.codec.AccountService" />
 </beans>
