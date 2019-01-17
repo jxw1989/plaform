@@ -10,14 +10,14 @@
        http://redisson.org/schema/redisson  
        http://redisson.org/schema/redisson/redisson.xsd">
 	<redisson:client id="redissonClient">
-		<redisson:single-server address="redis://127.0.0.1:6379"
+		<redisson:single-server address="redis://10.95.58.107:6379"
 		 connection-pool-size="500"
 		 idle-connection-timeout="10000" 
 		 connect-timeout="10000"
 		 timeout="3000"
 		 ping-timeout="30000"
 		 database="0"
-		 password=""
+		 password="123456"
 		/>
 	</redisson:client>
 </beans>  
