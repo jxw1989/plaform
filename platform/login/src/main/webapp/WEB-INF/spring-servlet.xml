@@ -7,16 +7,8 @@
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
 	<context:component-scan base-package="org.mbov" />
-
 	<mvc:default-servlet-handler />
-
 	<mvc:annotation-driven>
-		<mvc:argument-resolvers>
-			<bean class="org.mbov.framework.resolver.RequestArgumentResolver" />
-		</mvc:argument-resolvers>
-		<mvc:return-value-handlers>
-			<bean class="org.mbov.framework.resolver.ResponseArgumentResolver" />
-		</mvc:return-value-handlers>
 		<mvc:message-converters>
 			<bean id="mappingJacksonHttpMessageConverter"
 				class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
